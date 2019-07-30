@@ -5,13 +5,16 @@ require_relative( '../ruby_functions_practice' )
 class FunctionsTest < MiniTest::Test
 
   def test_return_10()
-    return_10_result = return_10()
-    assert_equal( 10, return_10_result )
+    expected = 10
+    actual = return_10()
+    assert_equal( expected, actual )
   end
 
   def test_add()
-    add_result = add( 1, 2 )
-    assert_equal( 3, add_result )
+    # 2,5
+    expected = 7
+    actual = add(2, 5)
+    assert_equal(expected, actual)
   end
 
   def test_subtract()
@@ -80,20 +83,22 @@ class FunctionsTest < MiniTest::Test
   # #Further
   #
   #Given the length of a side of a cube calculate the volume
-  def test_volume_of_cube()
-    test_cube_volume = volume_of_cube(5)
-    assert_equal(125, test_cube_volume)
+def test_volume_of_cube()
+  cube_size = volume_of_cube(5, 5, 5)
+  assert_equal(125, cube_size)
+end
+
+
+  #Given the radius of a sphere calculate the volume
+  def test_volume_of_sphere()
+    result = volume_of_sphere(5)
+    assert_equal(523, result)
   end
-  #
-  # #Given the radius of a sphere calculate the volume
-  # def test_volume_of_sphere()
-  #   #add test code here
-  # end
-  #
-  # #Given a value in farenheit, convert this into celsius.
-  # def test_fahrenheit_to_celsius()
-  #   #add test code here
-  # end
 
 
+  #Given a value in farenheit, convert this into celsius.
+  def test_fahrenheit_to_celsius()
+    result = fahrenheit_to_celsius(100)
+    assert_equal(37, result)
+  end
 end
